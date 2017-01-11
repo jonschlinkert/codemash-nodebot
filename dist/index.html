@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="assets/glyphicons.css" rel="stylesheet">
+
+    <style>
+    .btn, .btn-group > .btn {
+      font-size: 30px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    .btn-group > .btn {
+      border-radius: 0;
+    }
+    .btn-forward {
+      border-radius: 5px 5px 0 0;
+    }
+    .btn-reverse {
+      margin-top: -2px;
+      border-radius: 0 0 5px 5px;
+    }
+    </style>
+  </head>
+  <body>
+    <button id="btn-forward" class="btn btn-lg btn-success btn-block btn-forward">
+  <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
+</button>
+
+<div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%">
+  <button id="btn-left" type="button" class="btn btn-secondary" style="width: 50%">
+    <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+  </button>
+  <button id="btn-right" type="button" class="btn btn-secondary" style="width: 50%">
+    <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+  </button>
+</div>
+
+<button id="btn-reverse" class="btn btn-lg btn-info btn-block btn-reverse">
+  <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+</button>
+
+<button id="btn-stop" class="btn btn-lg btn-danger btn-block">
+  <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+</button> 
+    
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      ['forward', 'left', 'right', 'reverse', 'stop']
+        .forEach(function(cmd) {
+          $(`#btn-${cmd}`).click(function(e) {
+            e.preventDefault();
+            socket.emit('cmd', cmd);
+            return false;
+          });
+        });
+    </script>
+  </body>
+</html>

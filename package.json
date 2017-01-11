@@ -1,25 +1,57 @@
 {
   "name": "nodebots2017",
-  "version": "1.0.0",
   "description": "nodebots",
+  "version": "1.0.0",
+  "homepage": "https://github.com/hxlnt/nodebots2017",
+  "author": "rachel weil",
+  "repository": "hxlnt/nodebots2017",
+  "bugs": {
+    "url": "https://github.com/hxlnt/nodebots2017/issues"
+  },
+  "license": "ISC",
+  "files": [
+    "dist",
+    "index.js"
+  ],
   "main": "index.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "keywords": [
-    "nodebot",
-    "feather",
-    "johnny-five"
-  ],
   "dependencies": {
+    "assemble": "^0.17.1",
     "azure-iot-device": "1.1.0",
     "azure-iot-device-amqp": "1.1.0",
+    "codemash-nodebots-server": "^0.1.0",
     "etherport-client": "^0.1.0",
     "firmata": "0.14.1",
     "johnny-five": "^0.9.32",
     "moment": "^2.17.1"
   },
-  "author": "rachel weil",
-  "license": "ISC"
+  "keywords": [
+    "feather",
+    "johnny-five",
+    "nodebot",
+    "nodebots2017"
+  ],
+  "protocol": "https:",
+  "slashes": true,
+  "hostname": "github.com",
+  "host": "github.com",
+  "pathname": "https://github.com/hxlnt/feather-nodebot.git",
+  "path": "/hxlnt/feather-nodebot.git",
+  "href": "https://github.com/hxlnt/feather-nodebot.git",
+  "owner": "hxlnt",
+  "branch": "master",
+  "host_api": "api.github.com",
+  "host_raw": "https://raw.githubusercontent.com",
+  "api": "https://api.github.com/repos/hxlnt/feather-nodebot",
+  "tarball": "https://api.github.com/repos/hxlnt/feather-nodebot/tarball/master",
+  "clone": "https://github.com/hxlnt/feather-nodebot",
+  "zip": "https://github.com/hxlnt/feather-nodebot/archive/master.zip",
+  "https": "https://github.com/hxlnt/feather-nodebot",
+  "travis": "https://travis-ci.org/hxlnt/feather-nodebot"
 }
